@@ -8,12 +8,24 @@ The birthday letter is your supplied message, placed in the interactive reveal.
 The countdown automatically counts down to the next November 11.
 
 MUSIC:
-The page displays “I Wanna Be Yours” by Arctic Monkeys, but the audio file itself
-is not included. Add an audio file you are legally allowed to use as:
-  music.mp3
-The page displays "Soni Soni" By Darshan Raval, but the audio file itself is not included. Add an audio file you are legally allows to use as:
-  song.mp3
-Then the play/pause button will play it. The browser may require a tap to start.
+
+New Birthday Website
+
+- File: "index.html"
+- Song: Soni Soni – Darshan Raval
+- Music path: "music/soni.mp3"
+
+Older Birthday Website
+
+- File: "old.html"
+- Song: I Wanna Be Yours – Arctic Monkeys
+- Music path: "music/song.mp3"
+
+Instructions
+
+- Upload both MP3 files into the "music" folder.
+- Keep the filenames exactly as mentioned.
+- Music plays when visitors tap the music button.
 
 PUBLISH FREE:
 1. Sign in or create a free account at https://github.com/
