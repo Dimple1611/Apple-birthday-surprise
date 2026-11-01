@@ -437,21 +437,25 @@ function turnPage(direction) {
     (current + 1) + ' / ' + total;
 }
 
-function toggleMusic() {
+window.toggleMusic = async function() {
   const song = document.getElementById('song');
   const button = document.getElementById('musicButton');
 
+  if (!song || !button) return;
+
   if (song.paused) {
-    song.play().then(() => {
+    try {
+      await song.play();
       button.textContent = '♫ Pause music';
-    }).catch(() => {
+    } catch (error) {
+      console.error('Music error:', error);
       button.textContent = 'Tap to play ♫';
-    });
+    }
   } else {
     song.pause();
     button.textContent = '♫ Play music';
   }
-}
+};
 
 function revealSurprise() {
   document.getElementById('surprise').style.display = 'block';
