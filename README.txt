@@ -10,7 +10,7 @@ The countdown automatically counts down to the next November 11.
 MUSIC:
 The page displays “I Wanna Be Yours” by Arctic Monkeys, but the audio file itself
 is not included. Add an audio file you are legally allowed to use as:
-  music/song.mp3
+  song.mp3
 Then the play/pause button will play it. The browser may require a tap to start.
 
 PUBLISH FREE:
