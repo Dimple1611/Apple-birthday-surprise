@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f8e8e8">
+<title>For Apple 🍎 | A Birthday Surprise</title>
+<style>
+:root{--rose:#c77d86;--deep:#8e4f5c;--cream:#fff9f3;--pink:#f7e4e5;--gold:#c69b62;--ink:#65464b}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Georgia,'Times New Roman',serif;overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:32px 20px;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 35%,#fffdf9 0,#f9e9e9 55%,#efd5d8 100%)}
+.hero:before,.hero:after{content:"";position:absolute;border:1px solid #d6b08a66;border-radius:50%;width:320px;height:320px;animation:rotate 28s linear infinite}
+.hero:after{width:430px;height:430px;animation-direction:reverse}
+.hero-inner{position:relative;z-index:2;max-width:680px}
+.eyebrow{letter-spacing:.24em;text-transform:uppercase;font:11px Arial,sans-serif;color:var(--deep)}
+h1{font-size:clamp(48px,12vw,92px);font-weight:400;line-height:.98;margin:20px 0 14px;color:var(--deep)}
+h1 em{font-weight:400;color:var(--rose)}
+.subtitle{font-size:clamp(16px,3vw,20px);line-height:1.7;max-width:480px;margin:0 auto 28px}
+.primary,.soft-btn{border:0;border-radius:999px;padding:14px 24px;background:var(--deep);color:white;box-shadow:0 8px 22px #8e4f5c30;transition:.25s}
+.primary:hover,.soft-btn:hover{transform:translateY(-3px);box-shadow:0 12px 26px #8e4f5c40}
+.small-note{font:11px Arial,sans-serif;letter-spacing:.12em;color:#98777b;margin-top:18px}
+.float{position:absolute;opacity:.6;animation:drift 8s ease-in-out infinite;font-size:24px}
+.f1{left:12%;top:18%}.f2{right:13%;top:24%;animation-delay:1s}.f3{left:18%;bottom:17%;animation-delay:2s}.f4{right:16%;bottom:13%;animation-delay:3s}
+section{padding:84px 20px;max-width:1000px;margin:auto}
+.section-kicker{text-align:center;font:11px Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--rose)}
+h2{text-align:center;font-size:clamp(32px,7vw,48px);font-weight:400;color:var(--deep);margin:12px 0 16px}
+.intro{text-align:center;max-width:620px;margin:0 auto 36px;line-height:1.8;font-size:17px}
+.card{background:#fffdf9;border:1px solid #ead5d2;border-radius:24px;padding:30px;box-shadow:0 14px 40px #754c4c0d}
+.countdown{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:28px auto}
+.time{min-width:78px;background:#fff9f3;border:1px solid #ead5d2;border-radius:16px;padding:14px 10px;text-align:center}
+.time strong{display:block;font-size:30px;font-weight:400;color:var(--deep)}
+.time span{font:10px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#98777b}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.polaroid{background:white;padding:12px 12px 18px;box-shadow:0 12px 25px #68464b18;transform:rotate(-2deg);transition:.3s}
+.polaroid:nth-child(2){transform:rotate(2deg);margin-top:20px}
+.polaroid:nth-child(3){transform:rotate(-1deg)}
+.polaroid:nth-child(4){transform:rotate(1.5deg)}
+.polaroid:nth-child(5){transform:rotate(-1.5deg)}
+.polaroid:hover{transform:translateY(-7px) rotate(0)}
+.photo{aspect-ratio:4/5;background:linear-gradient(145deg,#f6dfe1,#f9eee4);display:grid;place-items:center;overflow:hidden;color:#986b73;text-align:center;font:12px Arial,sans-serif;letter-spacing:.08em}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.caption{text-align:center;padding-top:13px;font-size:15px;color:#805c62}
+.message-wrap{max-width:690px;margin:auto;text-align:center}
+.envelope{font-size:56px;margin:8px}
+.hidden-message{display:none;text-align:left;line-height:1.95;font-size:17px;margin-top:26px;white-space:pre-line;animation:fade .8s ease}
+.hidden-message.show{display:block}
+.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:24px}
+.soft-btn{background:#f1dfe0;color:var(--deep);box-shadow:none;border:1px solid #e7cdd0}
+.music-note{font:12px Arial,sans-serif;color:#98777b;margin-top:12px}
+footer{text-align:center;padding:42px 20px 60px;background:#f6e7e6;color:#8e626a}
+footer .heart{font-size:24px}
+footer p{font-size:14px;line-height:1.7}
+.sparkle{position:fixed;pointer-events:none;z-index:10;font-size:18px;animation:pop 1.2s ease-out forwards}
+@keyframes drift{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-18px) rotate(8deg)}}
+@keyframes rotate{to{transform:rotate(360deg)}}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pop{0%{opacity:0;transform:translateY(0) scale(.5)}20%{opacity:1}100%{opacity:0;transform:translateY(-90px) scale(1.5)}}
+@media(max-width:650px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr));max-width:520px;margin:auto}.polaroid:nth-child(2){margin-top:0}.card{padding:23px}.hero:before{width:260px;height:260px}.hero:after{width:340px;height:340px}}
+</style>
+</head>
+<body>
+<header class="hero" id="top">
+  <span class="float f1">♡</span><span class="float f2">✧</span><span class="float f3">♡</span><span class="float f4">✦</span>
+  <div class="hero-inner">
+    <div class="eyebrow">a little birthday something · 11 November</div>
+    <h1>For my<br><em>Apple</em> 🍎</h1>
+    <p class="subtitle">Some days deserve a little extra sparkle.<br>And today is all about you, Vibhu.</p>
+    <button class="primary" onclick="document.querySelector('#birthday').scrollIntoView({behavior:'smooth'})">Open your little surprise ♡</button>
+    <div class="small-note">MADE WITH CARE, JUST FOR YOU</div>
+  </div>
+</header>
+
+<main>
+<section id="birthday">
+  <div class="section-kicker">the day we celebrate you</div>
+  <h2>Happy Birthday, Apple!</h2>
+  <p class="intro">I hope your day feels as warm as candlelight, as sweet as your favourite dessert, and full of little reasons to smile.</p>
+  <div class="card" style="text-align:center">
+    <div style="font-size:34px">🕯️ ✨ 🎂 ✨ 🕯️</div>
+    <div class="countdown" aria-label="Countdown to November 11">
+      <div class="time"><strong id="days">--</strong><span>Days</span></div>
+      <div class="time"><strong id="hours">--</strong><span>Hours</span></div>
+      <div class="time"><strong id="minutes">--</strong><span>Minutes</span></div>
+      <div class="time"><strong id="seconds">--</strong><span>Seconds</span></div>
+    </div>
+    <p id="countdownText" style="margin:0;color:#98777b;font-style:italic">Counting down to your special day…</p>
+  </div>
+</section>
+
+<section id="memories">
+  <div class="section-kicker">little moments, lovely memories</div>
+  <h2>A few favourite frames</h2>
+  <p class="intro">A tiny corner for five of my favourite pictures of you. ♡</p>
+  <div class="gallery">
+    <div class="polaroid"><div class="photo"><img src="photos/photo1.jpg" alt="Apple standing in a black shirt"></div><div class="caption">one of my favourites ♡</div></div>
+    <div class="polaroid"><div class="photo"><img src="photos/photo2.jpg" alt="A soft close-up of Apple"></div><div class="caption">that lovely smile</div></div>
+    <div class="polaroid"><div class="photo"><img src="photos/photo3.jpg" alt="Apple in a maroon shirt"></div><div class="caption">a face I adore ♡</div></div>
+    <div class="polaroid"><div class="photo"><img src="photos/photo4.jpg" alt="Apple outdoors beside his motorcycle"></div><div class="caption">little moments, big memories</div></div>
+    <div class="polaroid"><div class="photo"><img src="photos/photo5.jpg" alt="Apple in a warm evening portrait"></div><div class="caption">my favourite person</div></div>
+  </div>
+</section>
+
+<section id="note">
+  <div class="section-kicker">a note, just for you</div>
+  <h2>There's something I want you to know…</h2>
+  <div class="card message-wrap">
+    <div class="envelope">💌</div>
+    <p class="intro" style="margin-bottom:10px">A little message is waiting inside.</p>
+    <button class="primary" id="revealBtn" onclick="revealMessage()">Tap to open your letter</button>
+    <div class="hidden-message" id="letter">My dear Apple🍎,
+
+The love of my life❤️ wishing you a very very happy birthday.🍰 May God give you all the happiness and success in your life🧿, I love you so much my baby.💋🫂
+
+I can't tell you how much happiness you gave me with your presence🥹, your existence means a lot to me.🫶🏻 I'm so grateful to your mom for giving birth to such an amazing person.🥺💫
+
+Always stay healthy, happy and wealthy.💕
+Also be mine for the rest of your life.💋
+
+Once again wishing you happy birthday, enjoy my baby!!💖✨️</div>
+    <div class="actions">
+      <button class="soft-btn" onclick="sprinkleHearts()">Send a little sparkle ✨</button>
+      <button class="soft-btn" onclick="document.querySelector('#top').scrollIntoView({behavior:'smooth'})">Back to the beginning ↑</button>
+    </div>
+  </div>
+</section>
+
+<section id="music">
+  <div class="section-kicker">a little background magic</div>
+  <h2>I Wanna Be Yours ♡</h2>
+  <p class="intro">A little song for you: “I Wanna Be Yours” — Arctic Monkeys. Add your own audio file to enable playback.</p>
+  <div class="card" style="text-align:center">
+    <div style="font-size:34px">♫</div>
+    <button class="primary" id="musicBtn" onclick="toggleMusic()">Play I Wanna Be Yours ♫</button>
+    <div class="music-note">Add your legally obtained audio file at <strong>music/song.mp3</strong></div>
+    <audio id="song" src="music/song.mp3" loop></audio>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="heart">♡</div>
+  <h2 style="font-size:30px;margin:8px 0">To more beautiful days, Apple.</h2>
+  <p>Happy 11 November, Vibhu.<br>A little page made with care, just for you.</p>
+</footer>
+
+<script>
+function nextBirthday(){
+  const now=new Date();
+  let year=now.getFullYear();
+  let target=new Date(year,10,11,0,0,0);
+  if(now>new Date(year,10,11,23,59,59)) target=new Date(year+1,10,11,0,0,0);
+  return target;
+}
+function updateCountdown(){
+  const now=new Date(), target=nextBirthday(), diff=Math.max(0,target-now);
+  const d=Math.floor(diff/86400000), h=Math.floor(diff%86400000/3600000), m=Math.floor(diff%3600000/60000), s=Math.floor(diff%60000/1000);
+  document.getElementById('days').textContent=d;
+  document.getElementById('hours').textContent=h;
+  document.getElementById('minutes').textContent=m;
+  document.getElementById('seconds').textContent=s;
+  document.getElementById('countdownText').textContent=diff===0?"It's your day! Happy Birthday, Apple! ♡":"Until 11 November — your day is getting closer.";
+}
+updateCountdown();setInterval(updateCountdown,1000);
+function revealMessage(){
+  document.getElementById('letter').classList.add('show');
+  document.getElementById('revealBtn').textContent='Your little letter is open ♡';
+  sprinkleHearts();
+}
+function sprinkleHearts(){
+  const symbols=['♡','✦','✨','♥','✧'];
+  for(let i=0;i<22;i++){
+    const el=document.createElement('span');el.className='sparkle';
+    el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+    el.style.left=(8+Math.random()*84)+'vw';el.style.top=(45+Math.random()*45)+'vh';
+    el.style.color=['#c77d86','#c69b62','#a96d79'][Math.floor(Math.random()*3)];
+    document.body.appendChild(el);setTimeout(()=>el.remove(),1300);
+  }
+}
+const song=document.getElementById('song'), musicBtn=document.getElementById('musicBtn');
+function toggleMusic(){
+  if(song.paused){song.play().then(()=>musicBtn.textContent='Pause our song ♡').catch(()=>alert('Add your song file as music/song.mp3, then try again.'))}
+  else{song.pause();musicBtn.textContent='Play I Wanna Be Yours ♫'}
+}
+song.addEventListener('ended',()=>musicBtn.textContent='Play I Wanna Be Yours ♫');
+</script>
+</body>
+</html>
